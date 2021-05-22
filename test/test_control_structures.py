@@ -69,3 +69,12 @@ class TddInPythonExample(unittest.TestCase):
         self.assertEqual("1,5,9", string1)
         string2 = ','.join('{},{}'.format(i, i + 1) for i in range(1, 30, 4))
         self.assertEqual("1,2,5,6,9,10,13,14,17,18,21,22,25,26,29,30", string2)
+
+    def test_while_method_returns_correct_result(self):
+        vector = [1, 2, 3, 4, 5]
+        i = 0
+        string = ""
+        while (i < len(vector)):
+            string = string + vector[i]
+            i = i + 1
+        self.assertEqual(string, "12345")
