@@ -75,6 +75,6 @@ class TddInPythonExample(unittest.TestCase):
         i = 0
         string = ""
         while (i < len(vector)):
-            string = string + vector[i]
+            string = string + str(vector[i])
             i = i + 1
         self.assertEqual(string, "12345")
