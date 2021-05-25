@@ -48,6 +48,14 @@ class TddInPythonExample(unittest.TestCase):
 
         self.assertEqual("cat,3;window,6;defenestrate,12;", string)
 
+    def test_zip_method_returns_correct_result(self):
+        v = [1, 2, 3]
+        w = [1, 2, 3]
+        z = []
+        for v_i, w_i in zip(v,w):
+            z = z + [v_i + w_i]
+        self.assertEqual(z, [2, 4, 6])
+
     def test_enumerate_method_returns_correct_result(self):
         words = ['cat', 'window', 'defenestrate']
         string = ""
