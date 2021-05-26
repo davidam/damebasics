@@ -33,7 +33,7 @@ from os import path
 #     long_description = f.read()
 
 setup(name='damebasics',
-      version='0.0.1',
+      version='0.0.2',
       description='Learning basic control structures and datastructures from Tests by David Arroyo Menéndez',
       long_description='Learning basic control structures and datastructures from Tests by David Arroyo Menéndez',
       classifiers=[
@@ -48,8 +48,8 @@ setup(name='damebasics',
       author='David Arroyo Menéndez',
       author_email='davidam@gmail.com',
       license='GPLv3',
-      packages=['damebasics', 'damebasics.tests'],
-      package_dir={'damebasics': 'damebasics', 'damebasics.tests': 'damebasics/tests'},
+      packages=['damebasics', 'damebasics.tests', 'damebasics.src'],
+      package_dir={'damebasics': 'damebasics', 'damebasics.src': 'damebasics/src', 'damebasics.tests': 'damebasics/tests'},
       install_requires=[
           'markdown',
       ],
