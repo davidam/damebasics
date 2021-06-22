@@ -30,87 +30,85 @@ from src.fib import Fib
 
 class TddInPythonExample(unittest.TestCase):
 
-    ############# CALCULATOR ################
+    # CALCULATOR #
 
-    def test_calculator_add_method_returns_correct_result(self):
+    def test_calculator_add_method(self):
         calc = Calculator()
-        result = calc.add(2,2)
+        result = calc.add(2, 2)
         self.assertEqual(4, result)
 
-    def test_calculator_sub_method_returns_correct_result(self):
+    def test_calculator_sub_method(self):
         calc = Calculator()
-        result = calc.sub(2,2)
+        result = calc.sub(2, 2)
         self.assertEqual(0, result)
 
-
-    def test_calculator_prod_method_returns_correct_result(self):
+    def test_calculator_prod_method(self):
         calc = Calculator()
-        result = calc.prod(2,2)
+        result = calc.prod(2, 2)
         self.assertEqual(4, result)
 
-    def test_calculator_div_method_returns_correct_result(self):
+    def test_calculator_div_method(self):
         calc = Calculator()
-        result = calc.div(2,2)
+        result = calc.div(2, 2)
         self.assertEqual(1, result)
 
-    def test_calculator_prodUsingAdd_method_returns_correct_result(self):
+    def test_calculator_prodUsingAdd_method(self):
         calc = Calculator()
-        result = calc.prodUsingAdd(5,4)
+        result = calc.prodUsingAdd(5, 4)
         self.assertEqual(20, result)
 
-    ############# FACTORIAL ################
+    # FACTORIAL #
 
-    def test_factorial_fac2_method_returns_correct_result(self):
+    def test_factorial_fac2_method(self):
         f = Factorial()
         result = f.fac(2)
         self.assertEqual(2, result)
 
-    def test_factorial_fac3_method_returns_correct_result(self):
+    def test_factorial_fac3_method(self):
         f = Factorial()
         result = f.fac(3)
         self.assertEqual(6, result)
 
-    def test_factorial_fac4_method_returns_correct_result(self):
+    def test_factorial_fac4_method(self):
         f = Factorial()
         result = f.fac(4)
         self.assertEqual(24, result)
 
-    ############ FIBONACCI ###############
+    # FIBONACCI #
 
-    def test_fib_fib2_method_returns_correct_result(self):
+    def test_fib_fib2_method(self):
         f = Fib()
         result = f.fib(2)
         self.assertEqual([1, 1], result)
 
-    def test_fib_fib3_method_returns_correct_result(self):
+    def test_fib_fib3_method(self):
         f = Fib()
         result = f.fib(3)
         self.assertEqual([1, 1, 2, 3, 5], result)
 
-    def test_fib_fib4_method_returns_correct_result(self):
+    def test_fib_fib4_method(self):
         f = Fib()
         result = f.fib(4)
         self.assertEqual([1, 1, 2, 3, 5, 8], result)
 
+    # PRIMES #
 
-    ############ PRIMES ##################
-
-    def test_primes_divisible_method_returns_correct_result(self):
+    def test_primes_divisible_method(self):
         p = Primes()
         result = p.divisible(4, 2)
         self.assertEqual(result, True)
 
-    def test_primes_generateList_method_returns_correct_result(self):
+    def test_primes_generateList_method(self):
         p = Primes()
         result = p.generateList(2, 11)
         self.assertEqual([2, 3, 4, 5, 6, 7, 8, 9, 10, 11], result)
 
-    def test_primes_dividers_method_returns_correct_result(self):
+    def test_primes_dividers_method(self):
         p = Primes()
         result = p.dividers(4)
         self.assertEqual([1, 2, 4], result)
 
-    def test_primes_primes_method_returns_correct_result(self):
+    def test_primes_primes_method(self):
         p = Primes()
         result = p.primes(4)
         self.assertEqual([1, 2, 3], result)
