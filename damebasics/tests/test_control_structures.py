@@ -24,6 +24,7 @@
 import unittest
 from pprint import pprint
 
+
 class TddInPythonExample(unittest.TestCase):
 
     def test_conditional_method_returns_correct_result(self):
@@ -44,7 +45,7 @@ class TddInPythonExample(unittest.TestCase):
         words = ['cat', 'window', 'defenestrate']
         string = ""
         for w in words:
-            string = string + w + "," + str(len(w)) +";"
+            string = string + w + "," + str(len(w)) + ";"
 
         self.assertEqual("cat,3;window,6;defenestrate,12;", string)
 
@@ -52,14 +53,14 @@ class TddInPythonExample(unittest.TestCase):
         v = [1, 2, 3]
         w = [1, 2, 3]
         z = []
-        for v_i, w_i in zip(v,w):
+        for v_i, w_i in zip(v, w):
             z = z + [v_i + w_i]
         self.assertEqual(z, [2, 4, 6])
 
     def test_enumerate_method_returns_correct_result(self):
         words = ['cat', 'window', 'defenestrate']
         string = ""
-        for i,w in enumerate(words):
+        for i, w in enumerate(words):
             string = string + str(i) + w
 
         self.assertEqual("0cat1window2defenestrate", string)
@@ -67,7 +68,7 @@ class TddInPythonExample(unittest.TestCase):
     def test_range_method_returns_correct_result(self):
         words = ['cat', 'window', 'defenestrate']
         string = ""
-        for i in range(1,10):
+        for i in range(1, 10):
             string = string + str(i)
 
         self.assertEqual("123456789", string)
