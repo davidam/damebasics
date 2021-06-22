@@ -17,7 +17,7 @@
 # GNU General Public License for more details.
 
 # You should have received a copy of the GNU General Public License
-# along with GNU Emacs; see the file COPYING.  If not, write to
+# along with DameBasics; see the file COPYING.  If not, write to
 # the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301 USA,
 
@@ -26,6 +26,7 @@ from src.calculator import Calculator
 from src.factorial import Factorial
 from src.primes import Primes
 from src.fib import Fib
+
 
 class TddInPythonExample(unittest.TestCase):
 
