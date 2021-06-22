@@ -35,17 +35,17 @@ class Primes(object):
             return [x] + self.generateList(x+1, y)
 
     def dividers(self, x):
-        l = self.generateList(1, x)
+        l1 = self.generateList(1, x)
         laux = []
-        for i in l:
+        for i in l1:
             if (0 == (x % i)):
                 laux = laux + [i]
         return laux
 
     def primes(self, x):
-        l = self.generateList(1, x)
+        l1 = self.generateList(1, x)
         laux = []
-        for i in l:
+        for i in l1:
             d = self.dividers(i)
             if ((len(d) == 2) or (i == 1)):
                 laux = laux + [i]
