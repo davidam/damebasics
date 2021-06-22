@@ -24,6 +24,7 @@
 import unittest
 from pprint import pprint
 
+
 class TddInPythonExample(unittest.TestCase):
 
     def test_list_append_method_returns_correct_result(self):
@@ -46,19 +47,21 @@ class TddInPythonExample(unittest.TestCase):
         self.assertEqual(li[2], "new")
         self.assertEqual(5, li.index("example"))
         li.remove("example")
-        self.assertEqual(["a", "b", "new", "mpilgrim", "z", "two", "elements"], li)
+        self.assertEqual(["a", "b", "new", "mpilgrim",
+                          "z", "two", "elements"],
+                         li)
 
     def test_list_union_method_returns_correct_result(self):
         lista = ['a', 'b', 'mpilgrim']
         lista = lista + ['example', 'new']
         lista += ['two']
-        self.assertEqual(lista, ['a', 'b', 'mpilgrim', 'example', 'new','two'])
-
+        self.assertEqual(lista, ['a', 'b', 'mpilgrim',
+                                 'example', 'new', 'two'])
 
     def test_sort_list_method_returns_correct_result(self):
-        milista = ['This', 'used', 'to', 'be', 'a', 'Whopping', 'Great', 'sentence']
+        milista = ['This', 'used', 'to', 'be', 'a',
+                   'Whopping', 'Great', 'sentence']
         milista2 = sorted(milista, key=str.lower)
-        self.assertEqual(milista2, ['a', 'be', 'Great', 'sentence', 'This', 'to', 'used', 'Whopping'])
-
-    # def test_list_union_method_returns_correct_result(self):
-    #     l = set(li).intersection(lista)
+        self.assertEqual(milista2, ['a', 'be', 'Great',
+                                    'sentence', 'This',
+                                    'to', 'used', 'Whopping'])
