@@ -26,16 +26,16 @@ import datetime
 from datetime import timedelta
 from pprint import pprint
 
+
 class TddInPythonExample(unittest.TestCase):
 
     def test_datetime_date_method_returns_correct_result(self):
-        mydate = datetime.date(1943,3, 13)  #year, month, day
-
+        mydate = datetime.date(1943, 3, 13)  # year, month, day
         self.assertEqual(mydate.strftime("%A"), "Saturday")
         self.assertEqual(mydate.strftime("%B"), "March")
 
     def test_datetime_timedelta_method_returns_correct_result(self):
-        seconds=153.1205153
+        seconds = 153.1205153
         d = timedelta(seconds)
 #        self.assertEqual("153 days, 2:53:32.521920", d)
         self.assertEqual(d.days, 153)
