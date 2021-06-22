@@ -24,6 +24,7 @@
 import unittest
 from pprint import pprint
 
+
 class TddInPythonExample(unittest.TestCase):
 
     def test_dict_method_returns_correct_result(self):
