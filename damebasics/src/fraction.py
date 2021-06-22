@@ -26,11 +26,10 @@ class Fraction(object):
     def __init__(self, n, d):
         self.numerator, self.denominator = self.reduce(n, d)
 
-
     @staticmethod
-    def gcd(a,b):
+    def gcd(a, b):
         while b != 0:
-            a, b = b, a%b
+            a, b = b, a % b
         return a
 
     @classmethod
@@ -39,4 +38,4 @@ class Fraction(object):
         return (n1 // g, n2 // g)
 
     def __str__(self):
-        return str(self.numerator)+'/'+str(self.denominator)
+        return str(self.numerator) + '/' + str(self.denominator)
