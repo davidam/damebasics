@@ -24,6 +24,7 @@
 import unittest
 from pprint import pprint
 
+
 class TddInPythonExample(unittest.TestCase):
 
     def test_set__method_returns_correct_result(self):
@@ -32,4 +33,7 @@ class TddInPythonExample(unittest.TestCase):
         paises.remove("China")
         paises.add("Turquia")
         paises.add("Alemania")
-        self.assertEqual(paises, set({"Italia", "Grecia", "Italia", "Grecia", "Brasil", "Turquia", "Alemania"}))
+        self.assertEqual(paises, set({"Italia", "Grecia",
+                                      "Italia", "Grecia",
+                                      "Brasil", "Turquia",
+                                      "Alemania"}))
