@@ -36,6 +36,7 @@ class TddInPythonExample(unittest.TestCase):
         self.assertEqual(1, mylist[0])
         self.assertEqual(2, mylist[1])
         self.assertEqual(3, mylist[2])
+        self.assertTrue(isinstance(mylist, list))
 
     def test_list_append_method_returns_correct_result(self):
         li = ["a", "b", "mpilgrim", "z", "example"]
@@ -50,6 +51,7 @@ class TddInPythonExample(unittest.TestCase):
         self.assertEqual(["a", "b", "new", "mpilgrim",
                           "z", "two", "elements"],
                          li)
+        self.assertTrue(isinstance(li, list))
 
     def test_list_union_method_returns_correct_result(self):
         lista = ['a', 'b', 'mpilgrim']
@@ -57,6 +59,7 @@ class TddInPythonExample(unittest.TestCase):
         lista += ['two']
         self.assertEqual(lista, ['a', 'b', 'mpilgrim',
                                  'example', 'new', 'two'])
+        self.assertTrue(isinstance(lista, list))
 
     def test_sort_list_method_returns_correct_result(self):
         milista = ['This', 'used', 'to', 'be', 'a',
@@ -65,3 +68,4 @@ class TddInPythonExample(unittest.TestCase):
         self.assertEqual(milista2, ['a', 'be', 'Great',
                                     'sentence', 'This',
                                     'to', 'used', 'Whopping'])
+        self.assertTrue(isinstance(milista2, list))
