@@ -37,3 +37,5 @@ class TddInPythonExample(unittest.TestCase):
                                       "Italia", "Grecia",
                                       "Brasil", "Turquia",
                                       "Alemania"}))
+        self.assertTrue(isinstance(paises, set))
+                                                  
