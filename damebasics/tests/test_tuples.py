@@ -31,9 +31,13 @@ class TddInPythonExample(unittest.TestCase):
         a = (1, 1, 2, 2, 3, 3)
         tsa = tuple(set(a))
         self.assertEqual((1, 2, 3), tsa)
+        self.assertTrue(isinstance(tsa, tuple))
 
     def test_tuple_join_method_returns_correct_result(self):
         a = ('2',)
         b = 'z'
         new = a + (b,)
         self.assertEqual(('2', 'z'), new)
+        self.assertTrue(isinstance(new, tuple))
+
+
