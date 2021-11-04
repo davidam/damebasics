@@ -37,3 +37,5 @@ class TddInPythonExample(unittest.TestCase):
         dicc2["elem1"].append(2)
         self.assertEqual(dicc2["elem1"], [1, 2])
         self.assertEqual(dicc2["elem2"], [1, 2, 3])
+        self.assertTrue(isinstance(dicc, dict))
+        self.assertTrue(isinstance(dicc2, dict))
