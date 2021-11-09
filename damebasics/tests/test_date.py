@@ -33,6 +33,7 @@ class TddInPythonExample(unittest.TestCase):
         mydate = datetime.date(1943, 3, 13)  # year, month, day
         self.assertEqual(mydate.strftime("%A"), "Saturday")
         self.assertEqual(mydate.strftime("%B"), "March")
+        self.assertTrue(isinstance(mydate, datetime.date))
 
     def test_datetime_timedelta_method_returns_correct_result(self):
         seconds = 153.1205153
