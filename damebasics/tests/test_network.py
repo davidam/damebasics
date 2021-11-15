@@ -31,7 +31,4 @@ class TddInPythonExample(unittest.TestCase):
     def test_network_socket_method_returns_correct_result(self):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect(("www.python.org", 80))
-        pprint(s)
-        if "<socket.socket" in str(s):
-            print(True)
-            print(s)
+        self.assertTrue("<socket.socket" in str(s))
