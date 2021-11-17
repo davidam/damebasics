@@ -43,3 +43,7 @@ class TddInPythonExample(unittest.TestCase):
         self.assertEqual(socket.getservbyport(21,proto), "ftp")
         self.assertEqual(socket.getservbyport(80,proto), "http")
         self.assertEqual(socket.getservbyport(443,proto), "https")
+
+    def test_network_startswith_method_returns_correct_result(self):
+        my_ip = socket.gethostbyname(socket.gethostname())
+        self.assertTrue(my_ip.startswith('127.0.'))
