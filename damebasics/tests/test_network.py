@@ -32,3 +32,14 @@ class TddInPythonExample(unittest.TestCase):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect(("www.python.org", 80))
         self.assertTrue("<socket.socket" in str(s))
+
+    def test_network_socket_get_method_returns_correct_result(self):
+        self.assertTrue(socket.gethostbyname(socket.gethostname()), "127.0.0.1")
+        self.assertTrue(socket.gethostbyaddr('127.0.0.1'), ('localhost', [], ['127.0.0.1']))
+        proto = "tcp"
+        self.assertEqual(socket.getservbyname("ftp",proto), 21)
+        self.assertEqual(socket.getservbyname("http",proto), 80)
+        self.assertEqual(socket.getservbyname("https",proto), 443)
+        self.assertEqual(socket.getservbyport(21,proto), "ftp")
+        self.assertEqual(socket.getservbyport(80,proto), "http")
+        self.assertEqual(socket.getservbyport(443,proto), "https")
