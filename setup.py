@@ -17,7 +17,7 @@
 # GNU General Public License for more details.
 
 # You should have received a copy of the GNU General Public License
-# along with GNU Emacs; see the file COPYING.  If not, write to
+# along with DameBasics; see the file COPYING.  If not, write to
 # the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301 USA,
 
@@ -33,9 +33,9 @@ from os import path
 #     long_description = f.read()
 
 setup(name='damebasics',
-      version='0.0.2',
+      version='0.1',
       description='Learning basic control structures and datastructures from Tests by David Arroyo Menéndez',
-      long_description='Learning basic control structures and datastructures from Tests by David Arroyo Menéndez',
+      long_description='Learning basic control structures and basic datastructures from Tests by David Arroyo Menéndez. Take a look to dameformats for a most complete list of datastructures',
       classifiers=[
         'Development Status :: 3 - Alpha',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
@@ -56,7 +56,7 @@ setup(name='damebasics',
       test_suite='nose.collector',
       tests_require=['nose', 'nose-cover3'],
       entry_points={
-          'console_scripts': ['damebasics=damebasics'],
+          'console_scripts': ['damebasics=damebasics.command_line:damebasics'],
       },
       include_package_data=True,
       zip_safe=False)
