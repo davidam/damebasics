@@ -61,12 +61,13 @@ class TddInPythonExample(unittest.TestCase):
         m3 = re.search(r'^(1[0-2]|[1-9])$', str(19))
         self.assertFalse(m3)
 
-    def test_string_search_method_returns_correct_result(self):
+    def test_string_group_method_returns_correct_result(self):
         p = '(?:http.*://)?(?P<host>[^:/ ]+).?(?P<port>[0-9]*).*'
-        regex = 'http[s]?://(www.)?([a-z]*\.)*(?P<host>[a-z]*)\.(?P<ext>[a-z]*)?'
         m = re.search(p,'http://www.abc.com:123/test')
         self.assertEqual(m.group('host'), 'www.abc.com') # 'www.abc.com'
         self.assertEqual(m.group('port'), str(123)) # '123'
-        m2 = re.search(regex,'http://madrid.elpais.es')
-        self.assertEqual(m2.group('host'), 'elpais')
-        self.assertEqual(m2.group('ext'), 'es')
+
+    def test_string_split_method_returns_correct_result(self):
+        self.assertEqual(re.split(r'\W+', 'Words, words, words.'), ['Words', 'words', 'words', ''])
+        self.assertEqual(re.split(r'(\W+)', 'Words, words, words.'), ['Words', ', ', 'words', ', ', 'words', '.', ''])
+        self.assertEqual(re.split(r'\W+', 'Words, words, words.', 1), ['Words', 'words, words.'])
