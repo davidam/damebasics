@@ -96,3 +96,9 @@ class TddInPythonExample(unittest.TestCase):
         abc = 'guru99@google.com, careerguru99@hotmail.com, users@yahoomail.com, helloworld'
         emails = re.findall(r'[\w\.-]+@[\w\.-]+', abc)
         self.assertEqual(emails, ['guru99@google.com', 'careerguru99@hotmail.com', 'users@yahoomail.com'])
+
+    def test_string_start_end_methods_returns_correct_result(self):
+        email = "tony@tiremove_thisger.net"
+        m = re.search("remove_this", email)
+        self.assertEqual(email[:m.start()], "tony@ti")
+        self.assertEqual(email[m.end():], "ger.net")
