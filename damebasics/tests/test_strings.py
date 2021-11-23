@@ -53,6 +53,18 @@ class TddInPythonExample(unittest.TestCase):
         strsub = re.sub(r'([\w\.-]+)@([\w\.-]+)', r'\1@yo-yo-dyne.com', str)
         self.assertEqual('purple alice@yo-yo-dyne.com, blah monkey bob@yo-yo-dyne.com blah dishwasher', strsub)
 
+    def test_string_match_method_returns_correct_result(self):
+        m = re.match(r"(\w+) (\w+) (\w+)", "Isaac Newton physicist")
+        self.assertEqual(m.group(0), "Isaac Newton physicist")
+        self.assertEqual(m.group(1), "Isaac")
+        self.assertEqual(m.group(2), "Newton")
+        self.assertEqual(m.group(3), "physicist")
+        n = re.match(r"(\[asf\]) (\w+) (\w+)", "[asf] tests Hola")
+        self.assertEqual(n.group(0), "[asf] tests Hola")
+        self.assertEqual(n.group(1), "[asf]")
+        self.assertEqual(n.group(2), "tests")
+        self.assertEqual(n.group(3), "Hola")
+
     def test_string_search_method_returns_correct_result(self):
         m = re.search(r'^(1[0-2]|[1-9])$', str(9))
         self.assertTrue(m)
@@ -60,6 +72,7 @@ class TddInPythonExample(unittest.TestCase):
         self.assertTrue(m2)
         m3 = re.search(r'^(1[0-2]|[1-9])$', str(19))
         self.assertFalse(m3)
+
 
     def test_string_group_method_returns_correct_result(self):
         p = '(?:http.*://)?(?P<host>[^:/ ]+).?(?P<port>[0-9]*).*'
