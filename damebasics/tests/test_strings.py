@@ -84,3 +84,15 @@ class TddInPythonExample(unittest.TestCase):
         self.assertEqual(re.split(r'\W+', 'Words, words, words.'), ['Words', 'words', 'words', ''])
         self.assertEqual(re.split(r'(\W+)', 'Words, words, words.'), ['Words', ', ', 'words', ', ', 'words', '.', ''])
         self.assertEqual(re.split(r'\W+', 'Words, words, words.', 1), ['Words', 'words, words.'])
+
+    def test_string_findall_method_returns_correct_result(self):
+        sentence = 'peter piper pick a peck of pickled peppers'
+        ps = 'p\w+'
+        l = re.findall(ps, sentence)
+        self.assertEqual(l, ['peter', 'piper', 'pick', 'peck', 'pickled', 'peppers'])
+        xx = "guru99,education is fun"
+        r1 = re.findall(r"^\w+",xx)
+        self.assertEqual(r1, ['guru99'])
+        abc = 'guru99@google.com, careerguru99@hotmail.com, users@yahoomail.com, helloworld'
+        emails = re.findall(r'[\w\.-]+@[\w\.-]+', abc)
+        self.assertEqual(emails, ['guru99@google.com', 'careerguru99@hotmail.com', 'users@yahoomail.com'])
