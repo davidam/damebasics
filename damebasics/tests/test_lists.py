@@ -38,7 +38,7 @@ class TddInPythonExample(unittest.TestCase):
         self.assertEqual(3, mylist[2])
         self.assertTrue(isinstance(mylist, list))
 
-    def test_list_append_method_returns_correct_result(self):
+    def test_list_methods_returns_correct_result(self):
         li = ["a", "b", "mpilgrim", "z", "example"]
         self.assertEqual(li[0], "a")
         self.assertEqual(li[0], "a")
@@ -53,6 +53,7 @@ class TddInPythonExample(unittest.TestCase):
                          li)
         self.assertTrue(isinstance(li, list))
 
+
     def test_list_union_method_returns_correct_result(self):
         lista = ['a', 'b', 'mpilgrim']
         lista = lista + ['example', 'new']
@@ -61,7 +62,7 @@ class TddInPythonExample(unittest.TestCase):
                                  'example', 'new', 'two'])
         self.assertTrue(isinstance(lista, list))
 
-    def test_sort_list_method_returns_correct_result(self):
+    def test_list_sort_method_returns_correct_result(self):
         milista = ['This', 'used', 'to', 'be', 'a',
                    'Whopping', 'Great', 'sentence']
         milista2 = sorted(milista, key=str.lower)
@@ -69,3 +70,8 @@ class TddInPythonExample(unittest.TestCase):
                                     'sentence', 'This',
                                     'to', 'used', 'Whopping'])
         self.assertTrue(isinstance(milista2, list))
+
+    def test_list_lambda_method_returns_correct_result(self):
+        l1 = list(map(lambda x: x**2, range(10)))
+        l2 = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+        self.assertEqual(l1, l2)
