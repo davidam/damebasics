@@ -26,7 +26,8 @@ import re
 
 from collections import Counter
 from collections import defaultdict
-
+from collections import deque
+from collections import namedtuple
 
 class TddInPythonExample(unittest.TestCase):
 
@@ -46,3 +47,14 @@ class TddInPythonExample(unittest.TestCase):
         minprob = defaultdict(lambda: 1.0)
         self.assertEqual(minprob[0], 1.0)
         self.assertEqual(minprob[99], 1.0)
+
+    def test_deque_methods_returns_correct_result(self):
+        d = deque('ghi')
+        self.assertEqual(deque(['g', 'h', 'i']), d)
+        self.assertEqual(d.pop(), 'i')
+
+    def test_namedtuple_methods_returns_correct_result(self):
+        Point = namedtuple('Point', ['x', 'y'])
+        p = Point(11, y=22)
+        res = p.x + p.y
+        self.assertEqual(res, 33)
