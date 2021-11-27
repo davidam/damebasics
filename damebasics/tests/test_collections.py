@@ -51,7 +51,9 @@ class TddInPythonExample(unittest.TestCase):
     def test_deque_methods_returns_correct_result(self):
         d = deque('ghi')
         self.assertEqual(deque(['g', 'h', 'i']), d)
-        self.assertEqual(d.pop(), 'i')
+        self.assertEqual(d.popleft(), 'g')
+        d.append('a')
+        self.assertEqual(deque('h', 'i', 'a'))
 
     def test_namedtuple_methods_returns_correct_result(self):
         Point = namedtuple('Point', ['x', 'y'])
