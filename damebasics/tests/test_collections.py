@@ -28,6 +28,7 @@ from collections import Counter
 from collections import defaultdict
 from collections import deque
 from collections import namedtuple
+from collections import ChainMap
 
 class TddInPythonExample(unittest.TestCase):
 
@@ -53,10 +54,17 @@ class TddInPythonExample(unittest.TestCase):
         self.assertEqual(deque(['g', 'h', 'i']), d)
         self.assertEqual(d.popleft(), 'g')
         d.append('a')
-        self.assertEqual(deque('h', 'i', 'a'))
+        self.assertEqual(deque(['h', 'i', 'a']), d)
 
     def test_namedtuple_methods_returns_correct_result(self):
         Point = namedtuple('Point', ['x', 'y'])
         p = Point(11, y=22)
         res = p.x + p.y
         self.assertEqual(res, 33)
+
+    def test_chainmap_methods_returns_correct_result(self):
+        d1 = {'a': 1, 'b': 2}
+        d2 = {'c': 3, 'd': 4}
+        d3 = {'e': 5, 'f': 6}
+        c = ChainMap(d1, d2, d3)
+        print(c, ChainMap({'a': 1, 'b': 2}, {'c': 3, 'd': 4}, {'e': 5, 'f': 6}))
