@@ -33,7 +33,7 @@ from os import path
 #     long_description = f.read()
 
 setup(name='damebasics',
-      version='0.1',
+      version='0.1.1.post12',
       description='Learning basic control structures and datastructures from Tests by David Arroyo Menéndez',
       long_description='Learning basic control structures and basic datastructures from Tests by David Arroyo Menéndez. Take a look to dameformats for a most complete list of datastructures',
       classifiers=[
@@ -48,8 +48,14 @@ setup(name='damebasics',
       author='David Arroyo Menéndez',
       author_email='davidam@gmail.com',
       license='GPLv3',
-      packages=['damebasics', 'damebasics.tests', 'damebasics.src'],
-      package_dir={'damebasics': 'damebasics', 'damebasics.src': 'damebasics/src', 'damebasics.tests': 'damebasics/tests'},
+      packages=['damebasics', 'damebasics.tests', 'damebasics.src', 'damebasics.files', 'damebasics.root'],
+      package_dir={'damebasics': 'damebasics', 'damebasics.src': 'damebasics/src', 'damebasics.tests': 'damebasics/tests', 'damebasics.files': 'damebasics/files', 'damebasics.root': '.'},
+      package_data={'damebasics': ['*'],
+                    'damebasiscs.files': ['*'],
+                    'damebasiscs.tests': ['*'],
+                    'damebasiscs.root': ['*'],
+                    'damebasiscs.src': ['*']},
+      data_files=[('damebasics', ['damebasics/files/pg1513.txt'])],      
       install_requires=[
           'markdown',
       ],
