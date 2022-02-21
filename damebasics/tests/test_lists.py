@@ -75,3 +75,5 @@ class TddInPythonExample(unittest.TestCase):
         l1 = list(map(lambda x: x**2, range(10)))
         l2 = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
         self.assertEqual(l1, l2)
+        self.assertTrue(isinstance(l1, list))
+        self.assertTrue(isinstance(l2, list))
