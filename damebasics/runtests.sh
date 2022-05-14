@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 #  Copyright (C) 2022 David Arroyo Menéndez
 
@@ -19,4 +19,24 @@
 #  the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, 
 #  Boston, MA 02110-1301 USA,
 
-nosetests3 tests
+# mkdir -p logs
+# touch logs/nose.txt
+# for i in $(ls tests/*); do
+#     echo $i
+#     nosetests $i 
+# done
+
+nosetests tests/test_arithmetics.py
+nosetests tests/test_collections.py
+nosetests tests/test_control_structures.py
+nosetests tests/test_date.py
+nosetests tests/test_dict.py
+nosetests tests/test_lists.py
+nosetests tests/test_network.py
+nosetests tests/test_network.py
+nosetests tests/test_poo.py
+nosetests tests/test_set.py
+nosetests tests/test_strings.py
+nosetests tests/test_tuples.py
+
+
