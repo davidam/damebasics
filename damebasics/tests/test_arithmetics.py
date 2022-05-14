@@ -46,3 +46,11 @@ class TddInPythonExample(unittest.TestCase):
         mymod = 5 % 2
         modres = 1
         self.assertEqual(mymod, modres)
+
+    def test_arithmetics_round_returns_correct_result(self):
+        myround1 = round(3.6)
+        round1res = 4
+        self.assertEqual(round1res, myround1)
+        myround2 = round(3.1459, 2)
+        round2res = 3.15
+        self.assertEqual(round2res, myround2)
