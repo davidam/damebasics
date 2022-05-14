@@ -26,6 +26,10 @@ import re
 import subprocess
 import io
 import sys
+# fix for MacOS using nose
+import collections
+collections.Callable = collections.abc.Callable
+
 
 from pprint import pprint
 

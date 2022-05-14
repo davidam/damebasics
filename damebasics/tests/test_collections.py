@@ -29,6 +29,10 @@ from collections import defaultdict
 from collections import deque
 from collections import namedtuple
 from collections import ChainMap
+# fix for MacOS using nose
+import collections
+collections.Callable = collections.abc.Callable
+
 
 class TddInPythonExample(unittest.TestCase):
 

@@ -23,6 +23,9 @@
 
 import unittest
 from pprint import pprint
+# fix for MacOS using nose
+import collections
+collections.Callable = collections.abc.Callable
 
 
 class TddInPythonExample(unittest.TestCase):
