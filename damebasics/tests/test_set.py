@@ -41,4 +41,6 @@ class TddInPythonExample(unittest.TestCase):
                                       "Brasil", "Turquia",
                                       "Alemania"}))
         self.assertTrue(isinstance(paises, set))
-                                                  
+        d = paises.difference(set({"Italia", "Grecia", "Turquia"}))
+        self.assertEqual(d, set({"Brasil", "Alemania"}))
+
