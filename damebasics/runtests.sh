@@ -31,6 +31,7 @@ nosetests tests/test_collections.py
 nosetests tests/test_control_structures.py
 nosetests tests/test_date.py
 nosetests tests/test_dict.py
+nosetests tests/test_files.py
 nosetests tests/test_lists.py
 nosetests tests/test_network.py
 nosetests tests/test_network.py
