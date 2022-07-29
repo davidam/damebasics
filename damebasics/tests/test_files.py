@@ -45,3 +45,11 @@ class TddInPythonExample(unittest.TestCase):
         with open('files/tmp2.txt', encoding='utf8') as f:
             text = f.read().strip()
         self.assertEqual(text, "This is a test\nTo add more lines.\nOne line of text here\nand another line here\nand yet another here\nand so on and so forth")
+
+    def test_files_readline_returns_correct_result(self):
+        fo = open("files/tmp.txt", "r+")
+        char = fo.readline(1)
+        self.assertEqual(char, "G")
+        fo.seek(1)
+        line = fo.readline()
+        self.assertEqual(line, "ora python\n")
