@@ -33,8 +33,8 @@ from os import path
 #     long_description = f.read()
 
 setup(name='damebasics',
-      version='0.1.1.post12',
-      description='Learning basic control structures and datastructures from Tests by David Arroyo Menéndez',
+      version='0.1.6',
+      description='Learning basic control structures and basic datastructures from Tests by David Arroyo Menéndez',
       long_description='Learning basic control structures and basic datastructures from Tests by David Arroyo Menéndez. Take a look to dameformats for a most complete list of datastructures',
       classifiers=[
         'Development Status :: 3 - Alpha',
