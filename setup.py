@@ -17,7 +17,7 @@
 # GNU General Public License for more details.
 
 # You should have received a copy of the GNU General Public License
-# along with DameBasics; see the file COPYING.  If not, write to
+# along with DameBasics; see the file LICENSE.  If not, write to
 # the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301 USA,
 
@@ -33,7 +33,7 @@ from os import path
 #     long_description = f.read()
 
 setup(name='damebasics',
-      version='0.1.6',
+      version='0.1.6.post1',
       description='Learning basic control structures and basic datastructures from Tests by David Arroyo Menéndez',
       long_description='Learning basic control structures and basic datastructures from Tests by David Arroyo Menéndez. Take a look to dameformats for a most complete list of datastructures',
       classifiers=[
