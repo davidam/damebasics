@@ -33,7 +33,7 @@ from os import path
 #     long_description = f.read()
 
 setup(name='damebasics',
-      version='0.1.6.post1',
+      version='0.1.6.post3',
       description='Learning basic control structures and basic datastructures from Tests by David Arroyo Menéndez',
       long_description='Learning basic control structures and basic datastructures from Tests by David Arroyo Menéndez. Take a look to dameformats for a most complete list of datastructures',
       classifiers=[
@@ -55,7 +55,7 @@ setup(name='damebasics',
                     'damebasiscs.tests': ['*'],
                     'damebasiscs.root': ['*'],
                     'damebasiscs.src': ['*']},
-      data_files=[('damebasics', ['damebasics/files/pg1513.txt'])],      
+      data_files=[('damebasics', ['damebasics/files/pg1513.txt', 'damebasics/runtests.sh', 'damebasics/files/tmp.txt', 'damebasics/files/tmp2.txt'])],      
       install_requires=[
           'markdown',
       ],
