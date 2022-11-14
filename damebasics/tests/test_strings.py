@@ -139,3 +139,8 @@ class TddInPythonExample(unittest.TestCase):
         m = re.search("remove_this", email)
         self.assertEqual(email[:m.start()], "tony@ti")
         self.assertEqual(email[m.end():], "ger.net")
+
+    def test_string_encode_decode(self):
+        china = "阿"
+        china_encode = china.encode("utf-8")
+        self.assertEqual(china_encode.decode("utf-8"), "阿")
