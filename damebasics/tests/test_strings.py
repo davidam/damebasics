@@ -144,3 +144,7 @@ class TddInPythonExample(unittest.TestCase):
         china = "阿"
         china_encode = china.encode("utf-8")
         self.assertEqual(china_encode.decode("utf-8"), "阿")
+
+    def test_string_casefold(self):
+        street = 'Gürzenichstraße'
+        self.assertEqual(street.casefold(), 'gürzenichstrasse')
