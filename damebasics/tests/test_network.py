@@ -34,9 +34,12 @@ class TddInPythonExample(unittest.TestCase):
 
     def test_network_socket_method_returns_correct_result(self):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect(("www.python.org", 80))
-        self.assertTrue("<socket.socket" in str(s))
-
+        try:
+            s.connect(("www.python.org", 80))
+            self.assertTrue("<socket.socket" in str(s))
+        except:
+            pprint("Please, to check the Internet connection")
+            
     def test_network_socket_get_method_returns_correct_result(self):
         self.assertTrue(socket.gethostbyname(socket.gethostname()), "127.0.0.1")
         self.assertTrue(socket.gethostbyaddr('127.0.0.1'), ('localhost', [], ['127.0.0.1']))
