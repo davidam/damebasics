@@ -124,7 +124,7 @@ class TddInPythonExample(unittest.TestCase):
 
     def test_string_findall_method_returns_correct_result(self):
         sentence = 'peter piper pick a peck of pickled peppers'
-        ps = 'p\w+'
+        ps = '(p[a-z|A-Z]+)'
         l = re.findall(ps, sentence)
         self.assertEqual(l, ['peter', 'piper', 'pick', 'peck', 'pickled', 'peppers'])
         xx = "guru99,education is fun"
@@ -144,7 +144,9 @@ class TddInPythonExample(unittest.TestCase):
         china = "阿"
         china_encode = china.encode("utf-8")
         self.assertEqual(china_encode.decode("utf-8"), "阿")
-
+        self.assertEqual(b'\x80abc'.decode("utf-8", "ignore"),'abc')
+        
     def test_string_casefold(self):
+        # more agressive lower
         street = 'Gürzenichstraße'
         self.assertEqual(street.casefold(), 'gürzenichstrasse')
