@@ -49,3 +49,6 @@ class TddInPythonExample(unittest.TestCase):
         self.assertEqual(prices_sorted_by_keys, dict({"price2": 3450, "price3": 2760, "price10": 2300}))
         prices_sorted_by_values = dict(sorted(prices.items(), key=lambda item: item[1]))
         self.assertEqual(prices_sorted_by_values, dict({"price10": 2300, "price3": 2760, "price2": 3450}))
+        prices_sorted_by_values2 = {k: v for k, v in sorted(prices.items(), key=lambda item: item[1])}
+        prices_sorted_by_values2 = dict(prices_sorted_by_values2)
+        self.assertEqual(prices_sorted_by_values2, dict({"price10": 2300, "price3": 2760, "price2": 3450}))
