@@ -72,7 +72,10 @@ class TddInPythonExample(unittest.TestCase):
                          li)
         self.assertTrue(isinstance(li, list))
 
-
+    def test_list_pop_method_returns_correct_result(self):
+        li0 = ["a", "b", "mpilgrim", "z", "example"]
+        self.assertEqual(li0.pop(), "example")
+        
     def test_list_union_method_returns_correct_result(self):
         lista = ['a', 'b', 'mpilgrim']
         lista = lista + ['example', 'new']
