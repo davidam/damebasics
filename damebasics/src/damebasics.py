@@ -17,7 +17,7 @@
 # GNU General Public License for more details.
 
 # You should have received a copy of the GNU General Public License
-# along with damenltk; see the file LICENSE.  If not, write to
+# along with damebasics; see the file LICENSE.  If not, write to
 # the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301 USA,
 
@@ -29,6 +29,7 @@ collections.Callable = collections.abc.Callable
 
 class DameBasics(object):
 
+    # FILES
     def eq_columns_in_csv(self, path):
         with open(path, 'r') as csvfile:
             first_line = csvfile.readline()
@@ -42,4 +43,14 @@ class DameBasics(object):
                 else:
                     eqcol = False
         return eqcol
+
     
+    def elimDobles(self, l):
+        if (len(l) == 0):
+            return l
+        else:
+            rest = []
+            for i in l:
+                if (i != l[0]):
+                    rest = rest + [i]
+        return [l[0]] + self.elimDobles(rest)
