@@ -22,6 +22,7 @@
 # Boston, MA 02110-1301 USA,
 
 import unittest
+from src.damebasics import DameBasics
 from pprint import pprint
 # fix for MacOS using nose
 import collections
@@ -80,3 +81,9 @@ class TddInPythonExample(unittest.TestCase):
         self.assertEqual(l1, l2)
         self.assertTrue(isinstance(l1, list))
         self.assertTrue(isinstance(l2, list))
+
+    def test_list_elimDobles_method_returns_correct_result(self):
+        db = DameBasics()
+        l0 = [0, 1, 1, 2, 2, 9, 9, 9]
+        l1= db.elimDobles(l0)
+        self.assertEqual(l1, [0, 1, 2, 9])
