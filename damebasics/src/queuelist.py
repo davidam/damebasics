@@ -26,16 +26,3 @@ class QueueList:
     def size(self):
         return len(self.items)
 
-# ql = QueueList()
-# ql.enqueue("1")
-# ql.enqueue("2")
-# ql.enqueue("3")
-# ql.enqueue("4")
-# ql.enqueue("5")
-# ql.enqueue("6")
-# ql.enqueue("7")
-# ql.enqueue("8")
-# ql.enqueue("9")
-# ql.enqueue("10")
-# print(ql.size())
-#ql.print_queue()
