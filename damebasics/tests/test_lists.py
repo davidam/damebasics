@@ -42,6 +42,21 @@ class TddInPythonExample(unittest.TestCase):
         self.assertEqual(3, mylist[2])
         self.assertTrue(isinstance(mylist, list))
 
+    def test_list_insert_method_returns_correct_result(self):
+        mylist = []
+        mylist.insert(0,1)
+        mylist.insert(1,2)
+        mylist.insert(2,3)
+
+        self.assertEqual(1, mylist[0])
+        self.assertEqual(2, mylist[1])
+        self.assertEqual(3, mylist[2])
+        self.assertTrue(isinstance(mylist, list))
+
+        mylist.insert(0,10)
+        self.assertEqual([10, 1, 2, 3], mylist)
+        
+        
     def test_list_methods_returns_correct_result(self):
         li = ["a", "b", "mpilgrim", "z", "example"]
         self.assertEqual(li[0], "a")
