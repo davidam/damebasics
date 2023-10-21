@@ -20,10 +20,11 @@
 #  Boston, MA 02110-1301 USA,
 
 import unittest
+from src.damebasics import DameBasics
 import collections
 collections.Callable = collections.abc.Callable
 
-from pprint import pprint
+# from pprint import pprint
 
 class TddInPythonExample(unittest.TestCase):
 
@@ -53,3 +54,12 @@ class TddInPythonExample(unittest.TestCase):
         fo.seek(1)
         line = fo.readline()
         self.assertEqual(line, "ora python\n")
+
+    def test_files_count_columns_return_correct_result(self):
+        db = DameBasics()
+        testpath0 = "files/fiall.csv"
+        bool0 = db.eq_columns_in_csv(testpath0)
+        self.assertTrue(bool0)
+        testpath1 = "files/buggy.csv"
+        bool1 = db.eq_columns_in_csv(testpath1)
+        self.assertFalse(bool1)        
