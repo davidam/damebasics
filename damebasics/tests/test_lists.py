@@ -105,3 +105,17 @@ class TddInPythonExample(unittest.TestCase):
         l0 = [0, 1, 1, 2, 2, 9, 9, 9]
         l1= db.elimDobles(l0)
         self.assertEqual(l1, [0, 1, 2, 9])
+
+    def test_list_sorted_method_returns_correct_result(self):
+        db = DameBasics()
+        l0 = sorted([5, 2, 3, 1, 4])
+        self.assertEqual(l0, [1, 2, 3, 4, 5])
+        l1 = sorted({1: 'D', 2: 'B', 3: 'B', 4: 'E', 5: 'A'})
+        self.assertEqual(l1, [1, 2, 3, 4, 5])        
+        l2 = [[2, 3], [6, 7], [3, 34], [24, 64], [1, 43]]
+        l3 = sorted(l2, key=lambda item: item[0])
+        self.assertEqual(l3, [[1, 43], [2, 3], [3, 34], [6, 7], [24, 64]])
+        l4 = [('red', 1), ('blue', 1), ('red', 2), ('blue', 2)]
+        l5 = sorted(l4, key=lambda item: item[0])
+        self.assertEqual(l5, [('blue', 1), ('blue', 2), ('red', 1), ('red', 2)])
+        
