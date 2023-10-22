@@ -65,6 +65,11 @@ class TddInPythonExample(unittest.TestCase):
         self.assertEqual(li[-1], "elements")
         li.insert(2, "new")
         self.assertEqual(li[2], "new")
+        self.assertEqual(0, li.index("a"))
+        self.assertEqual(1, li.index("b"))
+        self.assertEqual(2, li.index("new"))
+        self.assertEqual(3, li.index("mpilgrim"))
+        self.assertEqual(4, li.index("z"))
         self.assertEqual(5, li.index("example"))
         li.remove("example")
         self.assertEqual(["a", "b", "new", "mpilgrim",
