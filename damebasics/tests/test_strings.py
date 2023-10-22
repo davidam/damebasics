@@ -110,7 +110,13 @@ class TddInPythonExample(unittest.TestCase):
         m3 = re.search(r'^(1[0-2]|[1-9])$', str(19))
         self.assertFalse(m3)
 
-
+    def test_string_replace_method_returns_correct_result(self):
+        nombre = "Señora Juan"
+        nombre = nombre.replace("Señora", "Señor")
+        self.assertEqual(nombre, "Señor Juan")
+        nombre = nombre.lstrip("Señor ")
+        self.assertEqual(nombre, "Juan")
+        
     def test_string_group_method_returns_correct_result(self):
         p = '(?:http.*://)?(?P<host>[^:/ ]+).?(?P<port>[0-9]*).*'
         m = re.search(p,'http://www.abc.com:123/test')
