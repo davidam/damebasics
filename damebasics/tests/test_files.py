@@ -62,4 +62,4 @@ class TddInPythonExample(unittest.TestCase):
         self.assertTrue(bool0)
         testpath1 = "files/buggy.csv"
         bool1 = db.eq_columns_in_csv(testpath1)
-        self.assertFalse(bool1)        
+        self.assertFalse(bool1)  
