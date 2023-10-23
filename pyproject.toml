@@ -17,7 +17,7 @@ name = "damebasics"  # Required
 #
 # For a discussion on single-sourcing the version, see
 # https://packaging.python.org/guides/single-sourcing-package-version/
-version = "0.1.7"  # Required
+version = "0.1.9.post1"  # Required
 
 # This is a one-line description or tagline of what your project does. This
 # corresponds to the "Summary" metadata field:
@@ -146,7 +146,7 @@ main = "main:main"
 [tool.setuptools]
 # If there are data files included in your packages that need to be
 # installed, specify them here.
-package-data = {"damebasics" = ['damebasics/files/pg1513.txt', 'damebasics/runtests.sh', 'damebasics/files/tmp.txt', 'damebasics/files/tmp2.txt'] }
+package-data = {"damebasics" = ['damebasics/files/pg1513.txt', 'damebasics/files/fiall.csv', 'damebasics/runtests.sh', 'damebasics/files/tmp.txt', 'damebasics/files/tmp2.txt'] }
 
 [build-system]
 # These are the assumed default build requirements from pip:
