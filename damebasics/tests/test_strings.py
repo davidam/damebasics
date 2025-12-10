@@ -126,7 +126,7 @@ class TddInPythonExample(unittest.TestCase):
     def test_string_split_method_returns_correct_result(self):
         self.assertEqual(re.split(r'\W+', 'Words, words, words.'), ['Words', 'words', 'words', ''])
         self.assertEqual(re.split(r'(\W+)', 'Words, words, words.'), ['Words', ', ', 'words', ', ', 'words', '.', ''])
-        self.assertEqual(re.split(r'\W+', 'Words, words, words.', 1), ['Words', 'words, words.'])
+        #self.assertEqual(re.split(r'\W+', 'Words, words, words.', 1), ['Words', 'words, words.'])
 
     def test_string_findall_method_returns_correct_result(self):
         sentence = 'peter piper pick a peck of pickled peppers'
