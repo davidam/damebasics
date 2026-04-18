@@ -4,8 +4,17 @@
 That's a package to run tests about basics of Python.
 For example, lists, strings, for, dictionaries, ...
 
+# Installing
+
+$ mkdir venv-damebasics
+$ python3 -m venv venv-damebasics
+$ cd venv-damebasics
+$ source bin/activate
+$ pip3 install damebasics
+
 # Run tests!
 
+$ cd damebasics
 $ ./runtests.sh
 
 # Give me the package
@@ -16,16 +25,9 @@ To install from local:
 $ pip install -e .
 
 To install create tar.gz in dist directory: 
-$ python3 setup.py register sdist
+$ python3 -m build
 
 To upload to pypi: 
-$ twine upload dist/damebasics-0.0.1.tar.gz
+$ twine upload dist/damebasics-0.2.tar.gz
 
-To install from Internet: 
-$ pip3 install damebasics
-
-If you upload various tar.gz to pypi, you can need remove old files in dist directory and repeat the process:
-$ rm dist/\*tar.gz
-$ python3 setup.py register sdist
-$ twine upload dist/damebasics-0.0.1.tar.gz
 
