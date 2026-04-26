@@ -14,8 +14,15 @@ $ pip3 install damebasics
 
 # Run tests!
 
+All tests
 $ cd damebasics
 $ ./runtests.sh
+
+Single file of tests
+$ pytest tests/test_arithmetics.py
+
+Single test
+$ pytest tests/test_arithmetics.py::TddInPythonExample::test_arithmetics_calculator_returns_correct_result
 
 # Give me the package
 
