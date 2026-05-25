@@ -21,6 +21,7 @@
 # the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301 USA,
 
+import math
 import unittest
 import collections
 collections.Callable = collections.abc.Callable
@@ -57,3 +58,23 @@ class TddInPythonExample(unittest.TestCase):
         myround2 = round(3.1459, 2)
         round2res = 3.15
         self.assertEqual(round2res, myround2)
+
+    def test_arithmetics_sqrt_returns_correct_result(self):
+        mysqrt1 = math.sqrt(9)
+        sqrt1res = 3.0
+        self.assertEqual(mysqrt1, sqrt1res)
+        mysqrt2 = math.sqrt(25)
+        sqrt2res = 5.0
+        self.assertEqual(mysqrt2, sqrt2res)
+        
+    def test_arithmetics_sin_returns_correct_result(self):
+        mysin1 = math.sin(math.pi/2)
+        sin1res = 1.0
+        self.assertEqual(mysin1, sin1res)
+        mysin2 = math.sin(0)
+        sin2res = 0.0
+        self.assertEqual(mysin2, sin2res)
+        mysin3 = math.sin(math.radians(90))
+        sin3res = 1.0
+        self.assertEqual(mysin3, sin3res)
+        
