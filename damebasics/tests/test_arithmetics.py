@@ -21,6 +21,8 @@
 # the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301 USA,
 
+# Check https://www.w3schools.com/python/module_math.asp
+
 import math
 import unittest
 import collections
@@ -59,6 +61,19 @@ class TddInPythonExample(unittest.TestCase):
         round2res = 3.15
         self.assertEqual(round2res, myround2)
 
+    def test_arithmetics_ceil_floor_returns_correct_result(self):
+        myfloor1 = math.floor(1.4)
+        myfloor2 = math.floor(1.6)
+        myres1 = 1
+        self.assertEqual(myfloor1, myres1)
+        self.assertEqual(myfloor2, myres1)        
+
+        myceil1 = math.ceil(1.4)
+        myceil2 = math.ceil(1.6)
+        myres2 = 2
+        self.assertEqual(myceil1, myres2)
+        self.assertEqual(myceil2, myres2)        
+
     def test_arithmetics_sqrt_returns_correct_result(self):
         mysqrt1 = math.sqrt(9)
         sqrt1res = 3.0
@@ -77,4 +92,10 @@ class TddInPythonExample(unittest.TestCase):
         mysin3 = math.sin(math.radians(90))
         sin3res = 1.0
         self.assertEqual(mysin3, sin3res)
-        
+
+    def test_arithmetics_finite_returns_correct_result(self):
+        inf1 = math.isfinite(math.inf)
+        inf2 = math.isfinite(float("inf"))
+        inf3 = math.isfinite(float("-inf"))
+        self.assertEqual(inf1, inf2)
+        self.assertEqual(inf2, inf3)        
