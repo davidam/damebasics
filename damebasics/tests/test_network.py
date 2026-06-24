@@ -32,7 +32,11 @@ collections.Callable = collections.abc.Callable
 
 class TddInPythonExample(unittest.TestCase):
 
-    def test_network_socket_method_returns_correct_result(self):
+    def test_network_socket_gethostbyname(self):
+        ip = socket.gethostbyname('localhost')
+        self.assertEqual(ip, '127.0.0.1')
+    
+    def test_network_socket_connect(self):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         try:
             s.connect(("www.python.org", 80))
@@ -40,16 +44,19 @@ class TddInPythonExample(unittest.TestCase):
         except:
             pprint("Please, to check the Internet connection")
             
-    def test_network_socket_get_method_returns_correct_result(self):
-        self.assertTrue(socket.gethostbyname(socket.gethostname()), "127.0.0.1")
-        self.assertTrue(socket.gethostbyaddr('127.0.0.1'), ('localhost', [], ['127.0.0.1']))
+    def test_network_socket_gethostbyaddr(self):
+        g = socket.gethostbyaddr('127.0.0.1')
+        res = ('localhost', [], ['127.0.0.1'])
+        self.assertEqual(g, res)
+
+
+    def test_network_socket_getservbyname(self):      
         proto = "tcp"
+        self.assertEqual(socket.getservbyport(80,proto), "http")
         self.assertEqual(socket.getservbyname("ftp",proto), 21)
         self.assertEqual(socket.getservbyname("http",proto), 80)
         self.assertEqual(socket.getservbyname("https",proto), 443)
         self.assertEqual(socket.getservbyport(21,proto), "ftp")
-        self.assertEqual(socket.getservbyport(80,proto), "http")
-        self.assertEqual(socket.getservbyport(443,proto), "https")
-        my_ip = socket.gethostbyname(socket.gethostname())
-        n = re.match(r"(\d+)(\.)(\d+)(\.)(\d+)(\.)(\d+)", my_ip)
-        self.assertTrue(n)
+        self.assertEqual(socket.getservbyport(443,proto), "https")        
+
+        
