@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Copyright (C) 2019  David Arroyo Menéndez
+# Copyright (C) 2026  David Arroyo Menéndez
 
 # Author: David Arroyo Menéndez <davidam@gmail.com>
 # Maintainer: David Arroyo Menéndez <davidam@gmail.com>
@@ -36,3 +36,17 @@ class TestLambda(TestCase):
     def test_lambda_map_power(self):
         x = list(map(lambda x: 2 ** x, range(10)))
         self.assertEqual(x, [1, 2, 4, 8, 16, 32, 64, 128, 256, 512])
+
+    def test_lambda_map_upper(self):
+        a = ["apple", "banana", "cherry"]
+        # Use map() with lambda to convert each string to uppercase
+        b = map(lambda x: x.upper(), a)
+        # Convert the map object to a list and print it
+        result = list(b)
+        self.assertEqual(result, ["APPLE", "BANANA", "CHERRY"])
+
+    def test_lambda_map_multiply(self):
+        a = [1, 2, 3, 4, 5]
+        result = list(map(lambda x: x * 3, a))
+        print(result)
+        self.assertEqual(result, [3, 6, 9, 12, 15])
