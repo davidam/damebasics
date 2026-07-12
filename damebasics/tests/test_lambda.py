@@ -22,6 +22,7 @@
 # Boston, MA 02110-1301 USA,
 
 from unittest import TestCase
+from functools import reduce
 
 class TestLambda(TestCase):
 
@@ -50,3 +51,24 @@ class TestLambda(TestCase):
         result = list(map(lambda x: x * 3, a))
         print(result)
         self.assertEqual(result, [3, 6, 9, 12, 15])
+
+    def test_lambda_map_and_tuples(self):
+        nums = (1, 2, 3)
+        result = tuple(map(lambda x: x + 1, nums))
+        self.assertEqual(result, (2, 3, 4))
+
+    def test_lambda_reduce_strings(self):
+        from functools import reduce
+        a = ["Geeks", "for", "Geeks"]
+        result = reduce(lambda x, y: x + " " + y, a)
+        self.assertEqual(result, "Geeks for Geeks")
+
+    def test_lambda_reduce_integers(self):
+        a = [2, 4, 6, 8]
+        result = reduce(lambda x, y: x + y, a)
+        self.assertEqual(result, 20)
+
+    def test_lambda_reduce_highest(self):
+        a = [5, 9, 3, 12, 7]
+        result = reduce(lambda x, y: x if x > y else y, a)
+        self.assertEqual(result, 12)
