@@ -72,3 +72,8 @@ class TestLambda(TestCase):
         a = [5, 9, 3, 12, 7]
         result = reduce(lambda x, y: x if x > y else y, a)
         self.assertEqual(result, 12)
+
+    def test_lambda_filter(self):
+        c = [1, 2, 3, 4, 5, 6]
+        even = filter(lambda x: x % 2 == 0, c)
+        self.assertEqual([2, 4, 6], list(even))
