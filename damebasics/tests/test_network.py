@@ -23,6 +23,7 @@
 
 import unittest
 import socket
+import os
 import re
 from pprint import pprint
 # fix for MacOS using nose
@@ -32,10 +33,13 @@ collections.Callable = collections.abc.Callable
 
 class TddInPythonExample(unittest.TestCase):
 
+    def test_network_getpid(self):
+        self.assertTrue(os.getpid() > 0)
+
     def test_network_socket_gethostbyname(self):
         ip = socket.gethostbyname('localhost')
         self.assertEqual(ip, '127.0.0.1')
-    
+
     def test_network_socket_connect(self):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         try:
@@ -43,20 +47,18 @@ class TddInPythonExample(unittest.TestCase):
             self.assertTrue("<socket.socket" in str(s))
         except:
             pprint("Please, to check the Internet connection")
-            
+
     def test_network_socket_gethostbyaddr(self):
         g = socket.gethostbyaddr('127.0.0.1')
         res = ('localhost', [], ['127.0.0.1'])
         self.assertEqual(g, res)
 
 
-    def test_network_socket_getservbyname(self):      
+    def test_network_socket_getservbyname(self):
         proto = "tcp"
         self.assertEqual(socket.getservbyport(80,proto), "http")
         self.assertEqual(socket.getservbyname("ftp",proto), 21)
         self.assertEqual(socket.getservbyname("http",proto), 80)
         self.assertEqual(socket.getservbyname("https",proto), 443)
         self.assertEqual(socket.getservbyport(21,proto), "ftp")
-        self.assertEqual(socket.getservbyport(443,proto), "https")        
-
-        
+        self.assertEqual(socket.getservbyport(443,proto), "https")
