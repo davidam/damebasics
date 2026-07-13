@@ -8,25 +8,37 @@
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 3, or (at your option)
 #  any later version.
-# 
+#
 #  This file is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
-# 
+#
 #  You should have received a copy of the GNU General Public License
 #  along with DameBasics; see the file GPL.txt.  If not, write to
-#  the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, 
+#  the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 #  Boston, MA 02110-1301 USA,
 
 import unittest
 from src.damebasics import DameBasics
 import collections
+import os
 collections.Callable = collections.abc.Callable
 
 # from pprint import pprint
 
 class TddInPythonExample(unittest.TestCase):
+
+    def test_files_touch(self):
+        fname = "files/touch.txt"
+        fhandle = open(fname, 'a')
+        try:
+            os.utime(fname, None)
+        finally:
+            fhandle.close()
+        self.assertTrue(os.path.exists(fname))
+        self.assertTrue(os.path.isfile(fname))
+        self.assertFalse(os.path.isdir(fname))
 
     def test_files_write_returns_correct_result(self):
         fo = open("files/tmp.txt", "w")
@@ -62,4 +74,4 @@ class TddInPythonExample(unittest.TestCase):
         self.assertTrue(bool0)
         testpath1 = "files/buggy.csv"
         bool1 = db.eq_columns_in_csv(testpath1)
-        self.assertFalse(bool1)  
+        self.assertFalse(bool1)
