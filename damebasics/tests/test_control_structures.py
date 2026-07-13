@@ -30,7 +30,7 @@ collections.Callable = collections.abc.Callable
 
 class TddInPythonExample(unittest.TestCase):
 
-    def test_conditional_method_returns_correct_result(self):
+    def test_conditional_if(self):
         x = 2
         if x < 0:
             x = 0
@@ -43,6 +43,17 @@ class TddInPythonExample(unittest.TestCase):
             x = 'More than one'
 
         self.assertEqual(x, 'More than one')
+
+    def test_conditional_match(self):
+        day = 4
+        match day:
+            case 6:
+                str_match = "Today is Saturday"
+            case 7:
+                str_match = "Today is Sunday"
+            case _:
+                str_match = "Looking forward to the Weekend"
+        self.assertEqual(str_match, "Looking forward to the Weekend")
 
     def test_for_method_returns_correct_result(self):
         words = ['cat', 'window', 'defenestrate']
