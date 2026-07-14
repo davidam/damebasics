@@ -26,6 +26,7 @@ import unittest
 import collections
 collections.Callable = collections.abc.Callable
 
+from src.point import Point
 from src.calculator import Calculator
 from src.factorial import Factorial
 from src.primes import Primes
@@ -33,6 +34,22 @@ from src.fib import Fib
 
 
 class TddInPythonExample(unittest.TestCase):
+
+    # POINT #
+
+    def test_point_methods(self):
+        p1 = Point()
+        self.assertEqual(p1.x, 0)
+        self.assertEqual(p1.y, 0)
+        p2 = Point(1,1)
+        self.assertEqual(p2.__str__(), "(1,1)")
+        p3 = Point(0.5,-0.2)
+        self.assertEqual(p3.__str__(), "(0.5,-0.2)")
+        p4 = Point(-2,-3)
+        self.assertTrue(p2 < p4)
+        self.assertTrue(p1 < p3)
+        self.assertTrue(p3 < p2)
+        self.assertTrue(Point(0.5,-0.2),p3)
 
     # CALCULATOR #
 
