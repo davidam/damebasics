@@ -63,3 +63,10 @@ class TddInPythonExample(unittest.TestCase):
         else:
             result = (numerator / denominator)
             self.assertEqual(result, 2)
+
+    def test_exceptions_type_error(self):
+        x = 5
+        if not type(x) is int:
+            raise TypeError("Only integers are allowed")
+        else:
+            self.assertEqual(x,5)
