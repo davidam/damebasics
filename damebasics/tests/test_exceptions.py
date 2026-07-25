@@ -70,3 +70,15 @@ class TddInPythonExample(unittest.TestCase):
             raise TypeError("Only integers are allowed")
         else:
             self.assertEqual(x,5)
+
+    def test_exceptions_file_error(self):
+        try:
+            f = open("files/demofile.txt", "a")
+            try:
+                f.write("Lorem Ipsum")
+            except:
+                print("Something went wrong when writing to the file")
+            finally:
+                f.close()
+        except:
+            print("Something went wrong when opening the file")
