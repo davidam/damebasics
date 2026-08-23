@@ -46,6 +46,9 @@ class TddInPythonExample(unittest.TestCase):
         mydiv = 4 / 2
         divres = 2
         self.assertEqual(mydiv, divres)
+        mydiv = 5 // 2
+        divres = 2
+        self.assertEqual(mydiv, divres)
         mypow = pow(2, 3)
         powres = 8
         self.assertEqual(mypow, powres)
