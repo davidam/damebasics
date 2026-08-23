@@ -116,7 +116,7 @@ class TddInPythonExample(unittest.TestCase):
         self.assertEqual(nombre, "Señor Juan")
         nombre = nombre.lstrip("Señor ")
         self.assertEqual(nombre, "Juan")
-        
+
     def test_string_group_method_returns_correct_result(self):
         p = '(?:http.*://)?(?P<host>[^:/ ]+).?(?P<port>[0-9]*).*'
         m = re.search(p,'http://www.abc.com:123/test')
@@ -151,8 +151,14 @@ class TddInPythonExample(unittest.TestCase):
         china_encode = china.encode("utf-8")
         self.assertEqual(china_encode.decode("utf-8"), "阿")
         self.assertEqual(b'\x80abc'.decode("utf-8", "ignore"),'abc')
-        
+
     def test_string_casefold(self):
         # more agressive lower
         street = 'Gürzenichstraße'
         self.assertEqual(street.casefold(), 'gürzenichstrasse')
+
+    def test_string_multiply(self):
+        num1 = "5"
+        num2 = 3
+        result = num1 * num2
+        self.assertEqual(result, '555')
