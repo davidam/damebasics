@@ -82,3 +82,9 @@ class TddInPythonExample(unittest.TestCase):
                 f.close()
         except:
             print("Something went wrong when opening the file")
+
+    def test_exceptions_import_error(self):
+        try:
+            import spacy
+        except ImportError:
+            raise ImportError("You must install spacy...")
